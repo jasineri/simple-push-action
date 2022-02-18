@@ -8,4 +8,4 @@ This action makes pushing to GitHub as simple as possible
       with:
         # Files pattern to add, wildcards supported
         # Optional, default: ./*.*
-        file_pattern: *.html
+        file_pattern: ./*.html
