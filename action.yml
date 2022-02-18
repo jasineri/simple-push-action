@@ -16,6 +16,8 @@ runs:
     #        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
     - run: |
         cd ${{ inputs.directory }}
+        git config user.name "jasineri/simple-push-action"
+        git config user.email "<>"
         git add -A
         git commit -m "update action output"
         git push
