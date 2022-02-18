@@ -5,22 +5,21 @@ inputs:
   repo_token:
     description: A token to authenticate on behalf of the GitHub App installed on your repository
     required: true
-  directory:
+  source_directory:
     description: Outputs/source directory
     required: false
     default: dist
 runs:
   using: composite
   steps:
-    #        git config --global user.name "github-actions[bot]"
-    #        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
     - run: |
         cd ${{ inputs.directory }}
+        mkdir test
+        cd test
+        echo "test" > test
         git config user.name "jasineri/simple-push-action"
         git config user.email "<>"
         git add -A
         git commit -m "update action output"
         git push
       shell: bash
-    #      env:
-    #        GITHUB_TOKEN: ${{ inputs.repo_token }}
