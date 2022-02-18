@@ -1,16 +1,16 @@
-name: 'Simple git push action'
-description: 'Push GitHub action's output into your repository'
-author: 'jasineri'
+name: Simple git push action
+description: Push GitHub action output into your repository
+author: jasineri
 inputs:
   repo_token:
     description: A token to authenticate on behalf of the GitHub App installed on your repository
     required: true
   directory:
-    description: 'Outputs/source directory'
+    description: Outputs/source directory
     required: false
-    default: 'dist'
+    default: dist
 runs:
-  using: 'composite'
+  using: composite
   steps:
     - name: Test git
       run: echo "git branch test"
