@@ -12,14 +12,13 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Test git
-      run:
-#        git config --global user.name "github-actions[bot]"
-#        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    #        git config --global user.name "github-actions[bot]"
+    #        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    - run: |
         cd ${{ inputs.directory }}
         git add -A
         git commit -m "update action output"
         git push
-      #      env:
-      #        GITHUB_TOKEN: ${{ inputs.repo_token }}
       shell: bash
+    #      env:
+    #        GITHUB_TOKEN: ${{ inputs.repo_token }}
