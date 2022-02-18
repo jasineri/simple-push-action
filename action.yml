@@ -1,8 +1,8 @@
 name: 'Simple git push action'
-description: 'Push GitHub action output into your repository'
+description: 'Push GitHub action's output into your repository'
 author: 'jasineri'
 inputs:
-  repo-token:
+  repo_token:
     description: A token to authenticate on behalf of the GitHub App installed on your repository
     required: true
     default: ${{ secrets.GITHUB_TOKEN }}
@@ -16,5 +16,5 @@ runs:
     - name: Test git
       run: echo "git branch test"
       env:
-        GITHUB_TOKEN: ${{ inputs.token }}
+        GITHUB_TOKEN: ${{ inputs.repo_token }}
       shell: bash
