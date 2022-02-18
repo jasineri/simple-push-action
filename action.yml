@@ -2,24 +2,17 @@ name: Simple git push action
 description: Push GitHub action output into your repository
 author: jasineri
 inputs:
-  repo_token:
-    description: A token to authenticate on behalf of the GitHub App installed on your repository
-    required: true
-  source_directory:
-    description: Outputs/source directory
+  file_pattern:
+    description: Files pattern to add, wildcards supported
     required: false
-    default: dist
+    default: ./*.*
 runs:
   using: composite
   steps:
     - run: |
-        cd ${{ inputs.directory }}
-        mkdir test
-        cd test
-        echo "test" > test
         git config user.name "jasineri/simple-push-action"
         git config user.email "<>"
-        git add -A
+        git add ${{ inputs.file_pattern }}
         git commit -m "update action output"
         git push
       shell: bash
