@@ -1,5 +1,5 @@
 # Simple git push action
-Push your GitHub action's output into your repository
+Commit & push your GitHub action's output into your repository
 
 This action makes pushing to GitHub as simple as possible
 
