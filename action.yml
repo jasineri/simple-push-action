@@ -16,3 +16,6 @@ runs:
         git commit -m "update action output"
         git push
       shell: bash
+branding:
+  icon: corner-right-up
+  color: blue
