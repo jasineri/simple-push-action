@@ -13,8 +13,7 @@ runs:
         git config user.name "jasineri/simple-push-action"
         git config user.email "<>"
         git add ${{ inputs.file_pattern }}
-        git commit -m "update action output"
-        git push
+        git diff-index --quiet HEAD || git commit -m "update action output" && git push
       shell: bash
 branding:
   icon: corner-right-up
