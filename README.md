@@ -10,6 +10,6 @@ This action makes pushing to GitHub as simple as possible
 
     - uses: jasineri/simple-push-action@v1
       with:
-        # Files pattern to add, wildcards supported
-        # Optional, default: ./*.*
-        file_pattern: ./*.html
+         # Files pattern to add, wildcards supported
+         # Optional, default: ./*.*
+         file_pattern: ./*.html
