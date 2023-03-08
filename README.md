@@ -10,7 +10,7 @@ This action makes pushing to GitHub as simple as possible
 
     - uses: jasineri/simple-push-action@v2
       with:
-         # Optional, Repository name with owner. For example, actions/checkout, default: ${{ github.repository }}
+         # Optional, Repository name, default: ${{ github.repository }}
          # repository: ${{ github.repository  }}
 
          # Optional, Personal access token (PAT) used to push the repository, default: github.token
