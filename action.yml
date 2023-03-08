@@ -2,18 +2,35 @@ name: Simple git push action
 description: Push GitHub action output into your repository
 author: jasineri
 inputs:
+  repository:
+    description: Repository name
+    required: false
+    default: ${{ github.repository  }}
+  token:
+    description: Personal access token (PAT) used to push the repository.
+    required: false
+    default: ${{ github.token }}
+  path:
+    description: Ralative path under $GITHUB_WORKSPACE for the repository
+    required: false
+    default: .
   file_pattern:
     description: Files pattern to add, wildcards supported
     required: false
     default: ./*.*
+  message:
+    description: Commit message
+    required: false
+    default: 'Update from Github Action at `date`'
 runs:
   using: composite
   steps:
     - run: |
+        cd ${{ inputs.path }}
         git config user.name "jasineri/simple-push-action"
         git config user.email "<>"
         git add ${{ inputs.file_pattern }}
-        git diff-index --quiet HEAD || git commit -m "update action output" && git push
+        git diff-index --quiet HEAD || git commit -m ${{ inputs.message }} && git push https://${{ inputs.token }}@github.com/${{ inputs.repository }}.git
       shell: bash
 branding:
   icon: corner-right-up
