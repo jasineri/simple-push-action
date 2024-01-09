@@ -24,3 +24,6 @@ This action makes pushing to GitHub as simple as possible
 
          # Optional, Files pattern to add, wildcards supported, default: ./*.*
          file_pattern: ./*.html
+
+## Troubleshooting
+1. If your gitartwork's image is missing and the action workflow ends with an error message stating "Permission to ... denied to github-actions\[bot\]", check the workflow permissions settings and ensure that under Settings > Actions > General > Workflow permissions, the "Read and write permissions" is set!
